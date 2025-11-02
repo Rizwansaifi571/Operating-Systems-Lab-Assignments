@@ -28,15 +28,16 @@
 ---
 
 ## 1. 🌍 Overview
-Two assignment clusters:
+Three assignment clusters:
 * **Assignment‑1:** Low-level process primitives (creation, exec, states, priority, `/proc`).
 * **Assignment‑2:** CPU scheduling strategies + safe multiprocessing patterns.
+* **Assignment‑3:** Advanced scheduling algorithms + memory management techniques.
 
 > Goal: Make invisible OS behaviors visible through minimal, readable scripts.
 
 ---
 
-## 2. � Concepts Covered
+## 2. 🔧 Concepts Covered
 | Theme | Subtopics | Representative File(s) |
 |-------|-----------|------------------------|
 | Process Creation | `fork()`, PID/PPID | `task1.py` |
@@ -46,6 +47,9 @@ Two assignment clusters:
 | Scheduling Effect | `nice()` priority hints | `task5.py` |
 | CPU Scheduling | FCFS, SJF, SRTF, RR | `fcfs.py`, `sjfnp.py`, `sjfp.py`, `rr.py` |
 | Multiprocessing | Spawn, start, join, logging | `subtask*.py` |
+| Advanced Scheduling | Priority (Non-preemptive), Round Robin | Assignment-3/`task1.py` |
+| Memory Allocation | First Fit, Best Fit, Worst Fit | Assignment-3/`task2.py` |
+| Memory Management | MFT, MVT | Assignment-3/`task3.py` |
 
 ---
 
@@ -74,6 +78,10 @@ Assignment-1/
   task1.py  task2.py  task3.py  task4.py  task5.py
 Assignment-2/
   fcfs.py  sjfnp.py  sjfp.py  rr.py  subtask1..4.py
+Assignment-3/
+  task1.py  task2.py  task3.py
+Scheduling_Algorithm/
+  fcfs.py  rr.py  sjfnp.py  sjfp.py
 LICENSE
 README.md
 ```
@@ -87,11 +95,13 @@ git clone <repo-url>
 cd Operating-Systems-Lab-Assignments
 python3 Assignment-1/task1.py
 python3 Assignment-2/fcfs.py
+python3 Assignment-3/task1.py
 ```
 
-PowerShell (scheduling only):
+PowerShell (scheduling and memory management):
 ```powershell
 python Assignment-2\rr.py
+python Assignment-3\task2.py
 ```
 
 ---
@@ -106,6 +116,9 @@ python Assignment-2\rr.py
 | Priority / nice() | `python3 Assignment-1/task5.py` | Different finish ordering (not guaranteed, but illustrative). |
 | Round Robin | `python3 Assignment-2/rr.py` | Fair time-slice distribution. |
 | SRTF | `python3 Assignment-2/sjfp.py` | Frequent preemption when shorter job arrives. |
+| Priority Scheduling | `python3 Assignment-3/task1.py` | Non-preemptive priority-based process execution. |
+| Memory Allocation | `python3 Assignment-3/task2.py` | First/Best/Worst fit allocation strategies with fragmentation analysis. |
+| Memory Management | `python3 Assignment-3/task3.py` | MFT and MVT techniques for memory partitioning. |
 
 ---
 
@@ -118,6 +131,14 @@ Symbols: BT = Burst Time, AT = Arrival Time, WT = Waiting Time, TAT = Turnaround
 | SJF (Non‑P) | No | Shortest next job | Minimizes average WT (theoretical) |
 | SRTF | Yes | Always choose job w/ smallest remaining BT | Dynamic preemption |
 | Round Robin | Yes (quantum) | Time slices rotate | Fairness; context switch overhead |
+| Priority (Non‑P) | No | Highest priority first | Lower number = higher priority |
+
+**Memory Management Strategies:**
+| Strategy | Description | Trade-off |
+|----------|-------------|-----------|
+| First Fit | First available block ≥ process size | Fast allocation, high fragmentation |
+| Best Fit | Smallest available block ≥ process size | Reduced fragmentation, slower search |
+| Worst Fit | Largest available block ≥ process size | Large remaining blocks, high fragmentation |
 
 Average metrics (you can extend):
 ```
@@ -163,6 +184,9 @@ wsl --install
 | Priority Scheduling | Add static and dynamic priority algorithm. |
 | I/O Burst Simulation | Alternate CPU/I-O phases in SRTF model. |
 | Logging Enhancements | Per‑process JSON logs. |
+| Memory Compaction | Add defragmentation algorithms to memory management. |
+| Paging Simulation | Implement page replacement algorithms (LRU, FIFO, OPT). |
+| Deadlock Detection | Add Banker's algorithm and resource allocation graphs. |
 
 ---
 
