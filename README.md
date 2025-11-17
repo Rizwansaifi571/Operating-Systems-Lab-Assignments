@@ -28,10 +28,11 @@
 ---
 
 ## 1. 🌍 Overview
-Three assignment clusters:
+Four assignment clusters:
 * **Assignment‑1:** Low-level process primitives (creation, exec, states, priority, `/proc`).
 * **Assignment‑2:** CPU scheduling strategies + safe multiprocessing patterns.
 * **Assignment‑3:** Advanced scheduling algorithms + memory management techniques.
+* **Assignment‑4:** System utilities, process management, and comprehensive scheduling comparisons.
 
 > Goal: Make invisible OS behaviors visible through minimal, readable scripts.
 
@@ -50,6 +51,10 @@ Three assignment clusters:
 | Advanced Scheduling | Priority (Non-preemptive), Round Robin | Assignment-3/`task1.py` |
 | Memory Allocation | First Fit, Best Fit, Worst Fit | Assignment-3/`task2.py` |
 | Memory Management | MFT, MVT | Assignment-3/`task3.py` |
+| Script Execution | Subprocess management, script orchestration | Assignment-4/`task1.py` |
+| System Logging | Multiprocessing with structured logging | Assignment-4/`task2.py`, `task3.py` |
+| System Information | Platform detection, virtualization detection | Assignment-4/`task4.py` |
+| Scheduling Comparison | FCFS, SJF, RR performance analysis | Assignment-4/`task5.py` |
 
 ---
 
@@ -80,6 +85,8 @@ Assignment-2/
   fcfs.py  sjfnp.py  sjfp.py  rr.py  subtask1..4.py
 Assignment-3/
   task1.py  task2.py  task3.py
+Assignment-4/
+  task1.py  task2.py  task3.py  task4.py  task5.py
 Scheduling_Algorithm/
   fcfs.py  rr.py  sjfnp.py  sjfp.py
 LICENSE
@@ -96,12 +103,14 @@ cd Operating-Systems-Lab-Assignments
 python3 Assignment-1/task1.py
 python3 Assignment-2/fcfs.py
 python3 Assignment-3/task1.py
+python3 Assignment-4/task1.py
 ```
 
-PowerShell (scheduling and memory management):
+PowerShell (scheduling, memory management, and system utilities):
 ```powershell
 python Assignment-2\rr.py
 python Assignment-3\task2.py
+python Assignment-4\task5.py
 ```
 
 ---
@@ -119,6 +128,10 @@ python Assignment-3\task2.py
 | Priority Scheduling | `python3 Assignment-3/task1.py` | Non-preemptive priority-based process execution. |
 | Memory Allocation | `python3 Assignment-3/task2.py` | First/Best/Worst fit allocation strategies with fragmentation analysis. |
 | Memory Management | `python3 Assignment-3/task3.py` | MFT and MVT techniques for memory partitioning. |
+| Script Orchestration | `python3 Assignment-4/task1.py` | Sequential execution of multiple Python scripts via subprocess. |
+| System Logging | `python3 Assignment-4/task2.py` | Multiprocessing with structured logging to system_log.txt. |
+| System Information | `python3 Assignment-4/task4.py` | Platform detection and virtualization environment identification. |
+| Scheduling Comparison | `python3 Assignment-4/task5.py` | Side-by-side FCFS, SJF, and RR performance metrics. |
 
 ---
 
@@ -187,6 +200,9 @@ wsl --install
 | Memory Compaction | Add defragmentation algorithms to memory management. |
 | Paging Simulation | Implement page replacement algorithms (LRU, FIFO, OPT). |
 | Deadlock Detection | Add Banker's algorithm and resource allocation graphs. |
+| System Monitoring | Real-time CPU, memory, and process monitoring dashboard. |
+| Performance Benchmarks | Compare scheduling algorithms with various workload patterns. |
+| Configuration Management | Dynamic system configuration through config files. |
 
 ---
 
