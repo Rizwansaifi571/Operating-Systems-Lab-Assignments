@@ -1,4 +1,4 @@
-
+ 
 <div align="center">
   <img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white" alt="Python">
   <img src="https://img.shields.io/badge/Domain-Operating%20Systems-informational" alt="OS Domain">
